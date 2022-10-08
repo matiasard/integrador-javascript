@@ -66,3 +66,23 @@
 	height: 142px;
 	object-fit: contain;
 }
+
+/* -------------------- SPINNER -------------------- */
+.spinner {
+	margin: 5rem;
+	text-align: center;
+}
+.spinner svg {
+	height: 6rem;
+	width: 6rem;
+	fill: #f38e82;
+	animation: rotate 2s infinite linear;
+}
+@keyframes rotate {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

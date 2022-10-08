@@ -1,2 +1,3 @@
-export const API_URL = "https://forkify-api.herokuapp.com/api/v2/recipes";
+export const API_URL = "https://jsonplaceholder.typicode.com/photos";
+export const API_URL_2 = "api.json";
 export const TIMEOUT_SEC = 10;

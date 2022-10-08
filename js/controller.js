@@ -1,7 +1,7 @@
 import * as model from "./model.js";
-import ProductView from "./view/productView.js";
+import productView from "./view/productView.js";
 
-console.log("Controller Funcionando...");
+console.log("3️⃣Controller Funcionando...");
 
 const controlProduct = async function () {
 	try {
@@ -9,28 +9,33 @@ const controlProduct = async function () {
 		const id = 1;
 
 		if (!id) return;
-		// renderSpinner(productContainer); Funcion: Falta Implementar
 
 		//* 1) Load Product
 		//* Esta funcion es asincrona
 		await model.loadProduct(id);
-		// model.loadProduct(id);
 		// const { product } = model.state;
 
 		//* 2) Rendering Product
-		ProductView.render(model.state.recipe);
+		productView.render(model.state.product);
 		// const productView = new productView(model.state.product);
 	} catch (error) {
-		alert(error);
+		// alert(error);
+		productView.renderError();
 	}
 };
 
-// ['hashchange', 'load'].forEach(ev => {
-// 	window.addEventListener(ev, controlProduct)
-// });
+const testPrint = function () {
+	//* Asyc Function: Falta Agregar
+	console.log("Prueba de Test Print Subscriber");
+};
 
 function init() {
 	console.log("Funcion Init: Inicializando...");
+	//* Handler Event
+	productView.addHandlerRender(testPrint);
+	//* Spinner
+	productView.renderSpinner();
+	//* Control Product
 	controlProduct();
 }
 

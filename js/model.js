@@ -1,46 +1,34 @@
-import { productsData } from "./db.js";
-import { API_URL } from "./config.js";
+// import { productsData } from "./db.js";
+// console.log(productsData);
+import { API_URL, API_URL_2 } from "./config.js";
 import { getJSON } from "./helper.js";
 
-console.log("Model Funcionando...");
-
-console.log(productsData);
+console.log("1️⃣Model Funcionando...");
 
 export const state = {
-	recipe: {},
+	product: {},
 };
 
 export const loadProduct = async function (id) {
 	try {
+		// * Fetch 👇
 		// const data = await getJSON(`${API_URL}/${id}`);
+		const data = await getJSON(`${API_URL_2}`);
+		console.log(data);
+		// let { product } = data.data;
 
-		// let { recipe } = data.data;
+		let product = data.find((el) => el.id === Number(id));
 
-		// state.recipe = {
-		// 	id: recipe.id,
-		// 	title: recipe.title,
-		// 	publisher: recipe.publisher,
-		// 	sourceUrl: recipe.source_url,
-		// 	image: recipe.image_url,
-		// 	servings: recipe.sercings,
-		// 	cookingTime: recipe.cooking_time,
-		// 	ingredients: recipe.ingredients,
-		// };
-
-		let data2 = productsData.find((el) => el.id === Number(id));
-		console.log(data2);
-		let recipe = data2;
-		console.log(recipe);
-
-		state.recipe = {
-			id: recipe.price,
-			title: recipe.name,
-			publisher: recipe.description,
-			image: recipe.cardImg,
+		state.product = {
+			id: product.id,
+			title: product.name,
+			description: product.description,
+			image: product.cardImg,
+			price: product.price,
 		};
-
-		console.log(state.recipe);
+		console.log(state.product);
 	} catch (error) {
-		alert(error);
+		//* Propagamos el error para que pase directo al "Catch" del "controller.js"
+		throw error;
 	}
 };
