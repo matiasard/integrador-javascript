@@ -5,22 +5,30 @@
 		"price": 92450,
 		"description": "description...",
 		"category": "placa de video",
-		"cardImg": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_28866_Placa_de_Video_ASUS_GeForce_GTX_1660_TI_6GB_GDDR6_TUF_EVO_OC_c3ef28a0-med.jpg"
+		"image": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_28866_Placa_de_Video_ASUS_GeForce_GTX_1660_TI_6GB_GDDR6_TUF_EVO_OC_c3ef28a0-med.jpg"
 	},
 	{
 		"id": 2,
-		"name": "Placa de Video ASUS GeForce GTX 1660 SUPER 6GB GDDR6 Phoenix OC",
-		"price": 80900,
+		"name": "Placa de Video Zotac GeForce GTX 1650 4GB GDDR6 AMP CORE",
+		"price": 56000,
 		"description": "description...",
 		"category": "placa de video",
-		"cardImg": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_27887_Placa_de_Video_ASUS_GeForce_GTX_1660_SUPER_6GB_GDDR6_Phoenix_OC_558bcfa1-grn.jpg"
+		"image": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_28833_Placa_de_Video_Zotac_GeForce_GTX_1650_4GB_GDDR6_AMP_CORE_c62edb85-grn.jpg"
 	},
 	{
 		"id": 3,
-		"name": "Placa de Video MSI GeForce RTX 3090 24GB GDDR6X VENTUS 3X OC",
-		"price": 290000,
+		"name": "Gabinete ASUS ROG STRIX Helios Aluminum Black RGB",
+		"price": 86000,
 		"description": "description...",
-		"category": "placa de video",
-		"cardImg": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_32389_Placa_de_Video_MSI_GeForce_RTX_3090_24GB_GDDR6X_VENTUS_3X_OC_652818d1-grn.jpg"
+		"category": "gabinete",
+		"image": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_21594_Gabinete_ASUS_ROG_STRIX_Helios_Aluminum_Black_RGB_81c9ec14-grn.jpg"
+	},
+	{
+		"id": 4,
+		"name": "Memoria GeiL DDR4 16GB 3000MHz Super Luce RGB Black",
+		"price": 21000,
+		"description": "description...",
+		"category": "memoria ram",
+		"image": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_31776_Memoria_GeiL_DDR4_16GB_3000MHz_Super_Luce_RGB_Black_646b61f7-grn.jpg"
 	}
 ]

@@ -7,6 +7,10 @@ console.log("1️⃣Model Funcionando...");
 
 export const state = {
 	product: {},
+	search: {
+		query: "",
+		results: [],
+	},
 };
 
 export const loadProduct = async function (id) {
@@ -21,9 +25,10 @@ export const loadProduct = async function (id) {
 
 		state.product = {
 			id: product.id,
-			title: product.name,
+			name: product.name,
 			description: product.description,
-			image: product.cardImg,
+			category: product.category,
+			image: product.image,
 			price: product.price,
 		};
 		console.log(state.product);
@@ -32,3 +37,29 @@ export const loadProduct = async function (id) {
 		throw error;
 	}
 };
+
+//* Dado que esto realizara llamadas AJAX, sera una funcion Asincrona
+export const loadSearchResults = async function (query) {
+	try {
+		state.search.query = query;
+		// const data = await getJSON(`${API_URL_2}?search=${query}`);
+		const data = await getJSON(API_URL_2);
+
+		const searchResults = data.filter((product) =>
+			product.name.toLowerCase().includes(query)
+		);
+
+		state.search.results = searchResults.map((product) => {
+			return {
+				id: product.id,
+				name: product.name,
+				image: product.image,
+				price: product.price,
+			};
+		});
+	} catch (error) {
+		//* Propagamos el error para que el "controller.js" decida que accion realizar con el error
+		throw error;
+	}
+};
+// loadSearchResults("placa");

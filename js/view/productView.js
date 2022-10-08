@@ -28,9 +28,9 @@ class ProductView {
 
 	renderError(message = this.#errorMessage) {
 		const markup = `
-		<div class="alert alert-danger text-center fw-bold" role="alert">
-			${message}
-		</div>`;
+			<div class="alert alert-danger text-center fw-bold" role="alert">
+				${message}
+			</div>`;
 
 		this.#clear();
 		this.#parentElement.insertAdjacentHTML("afterbegin", markup);
@@ -38,9 +38,9 @@ class ProductView {
 
 	renderMessage(message = this.#message) {
 		const markup = `
-		<div class="alert alert-success text-center" role="alert">
-			${message}
-		</div>`;
+			<div class="alert alert-success text-center" role="alert">
+				${message}
+			</div>`;
 
 		this.#clear();
 		this.#parentElement.insertAdjacentHTML("afterbegin", markup);
@@ -73,7 +73,7 @@ class ProductView {
 				</div>
 				<div class="col-12 col-md-8 text-center text-md-start">
 					<div class="card-body">
-						<h5 class="card-title">${this.#data.title}</h5>
+						<h5 class="card-title">${this.#data.name}</h5>
 						<p class="card-text">$${this.#data.price}</p>
 						<button class="btn btn-primary">Sumar al carrito</button>
 					</div>
