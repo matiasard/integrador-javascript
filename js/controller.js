@@ -1,6 +1,7 @@
 import * as model from "./model.js";
 import productView from "./view/productView.js";
 import searchView from "./view/searchView.js";
+import resultsView from "./view/resultsView.js";
 
 console.log("3️⃣Controller Funcionando...");
 
@@ -33,18 +34,15 @@ const controlSearchResults = async function () {
 		const query = searchView.getQuery();
 
 		if (!query) return;
-		productView.renderSpinner();
+		resultsView.renderSpinner();
 
 		//* 2) Load Results
 		await model.loadSearchResults(query);
 
 		//* 3) Render Results
-		// todo: implementar la funcion para renderizar todos los resultados
-		console.log(model.state.search.results);
-		// await productView.renderSearchResults(model.state.search.results);
-		await productView.render(model.state.search.results[0]);
+		resultsView.render(model.state.search.results);
 	} catch (error) {
-		productView.renderError(
+		resultsView.renderError(
 			`No se encontraron resultados con el nombre "${model.state.search.query}"`
 		);
 	}
