@@ -1,9 +1,18 @@
 import * as model from "./model.js";
+import productsView from "./view/productsView.js";
 import productView from "./view/productView.js";
 import searchView from "./view/searchView.js";
 import resultsView from "./view/resultsView.js";
 
 console.log("3️⃣Controller Funcionando...");
+
+const controlProducts = async function () {
+	//* 1) Load Products
+	await model.loadProducts();
+
+	//* 2) Render products
+	productsView.render(model.state.products);
+};
 
 const controlProduct = async function () {
 	try {
@@ -57,11 +66,11 @@ function init() {
 	console.log("Funcion Init: Inicializando...");
 	//* Handler Event
 	// productView.addHandlerRender(controlProduct);
-	productView.addHandlerRender(testPrint);
+	productsView.addHandlerRender(testPrint);
 	searchView.addHandlerSearch(controlSearchResults);
 
-	//* Control Product
-	controlProduct();
+	//* Show All Products
+	controlProducts();
 }
 
 init();

@@ -7,10 +7,20 @@ console.log("1️⃣Model Funcionando...");
 
 export const state = {
 	product: {},
+	products: {},
 	search: {
 		query: "",
 		results: [],
 	},
+};
+
+export const loadProducts = async function () {
+	try {
+		const data = await getJSON(API_URL_2);
+		state.products = data;
+	} catch (error) {
+		throw error;
+	}
 };
 
 export const loadProduct = async function (id) {

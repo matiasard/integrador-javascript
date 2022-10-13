@@ -30,5 +30,45 @@
 		"description": "description...",
 		"category": "memoria ram",
 		"image": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_31776_Memoria_GeiL_DDR4_16GB_3000MHz_Super_Luce_RGB_Black_646b61f7-grn.jpg"
+	},
+	{
+		"id": 5,
+		"name": "Teclado Mecanico Redragon K585 RGB Diti Switch Brown",
+		"price": 7110,
+		"description": "description...",
+		"category": "teclado",
+		"image": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_29734_Teclado_Mecanico_Redragon_Kumara_K552-KR_Rainbow_Espa__ol_Switch_Outemu_RED_TKL_f649d333-grn.jpg"
+	},
+	{
+		"id": 6,
+		"name": "Teclado Mecanico Redragon Dragonborn K630 White RGB 60% Outemu Brown",
+		"price": 6920,
+		"description": "description...",
+		"category": "teclado",
+		"image": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_29728_Teclado_Mecanico_Redragon_Dragonborn_K630_White_RGB_60__Outemu_Brown_cc705bb6-grn.jpg"
+	},
+	{
+		"id": 7,
+		"name": "Memoria GeiL DDR4 8GB 2666MHz EVO Potenza Black",
+		"price": 8800,
+		"description": "description...",
+		"category": "memoria ram",
+		"image": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_28202_Memoria_GeiL_DDR4_8GB_2666MHz_EVO_Potenza_Black_e922a2ab-grn.jpg"
+	},
+	{
+		"id": 8,
+		"name": "Memora PNY DDR4 8GB 3200MHz XLR8 Epic RGB",
+		"price": 9900,
+		"description": "description...",
+		"category": "memoria ram",
+		"image": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_23497_Memora_PNY_DDR4_8GB_3200MHz_XLR8_Epic_RGB_8c02f6d9-grn.jpg"
+	},
+	{
+		"id": 8,
+		"name": "Placa de Video XFX Radeon RX 6500 XT Black 4GB GDDR6 Speedster QICK210",
+		"price": 52000,
+		"description": "description...",
+		"category": "memoria ram",
+		"image": "https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_30405_Placa_de_Video_XFX_Radeon_RX_6500_XT_Black_4GB_GDDR6_Speedster_QICK210_f534d98b-grn.jpg"
 	}
 ]
