@@ -3,12 +3,16 @@ import productsView from "./view/productsView.js";
 import productView from "./view/productView.js";
 import searchView from "./view/searchView.js";
 import resultsView from "./view/resultsView.js";
+import paginationView from "./view/paginationView.js";
 
 console.log("3️⃣Controller Funcionando...");
 
 const controlProducts = async function () {
 	//* 1) Load Products
 	await model.loadProducts();
+
+	//* Spinner
+	productsView.renderSpinner();
 
 	//* 2) Render products
 	productsView.render(model.state.products);
@@ -49,12 +53,32 @@ const controlSearchResults = async function () {
 		await model.loadSearchResults(query);
 
 		//* 3) Render Results
-		resultsView.render(model.state.search.results);
+		// resultsView.render(model.state.search.results);
+		resultsView.render(model.getSearchResultsPage(model.state.search.page));
+
+		//* 4) Render initial pagination buttons
+		paginationView.render(model.state.search);
+		paginationView._addClassActivePage();
 	} catch (error) {
 		resultsView.renderError(
 			`No se encontraron resultados con el nombre "${model.state.search.query}"`
 		);
 	}
+};
+
+const controllPagination = function (goToPage) {
+	// console.log(goToPage);
+	model.state.search.page = goToPage;
+
+	//* Spinner
+	resultsView.renderSpinner();
+
+	//* 1) Render NEW Results
+	resultsView.render(model.getSearchResultsPage(model.state.search.page));
+
+	//* 2) Render New pagination buttons
+	paginationView.render(model.state.search);
+	paginationView._addClassActivePage();
 };
 
 const testPrint = function () {
@@ -68,6 +92,7 @@ function init() {
 	// productView.addHandlerRender(controlProduct);
 	productsView.addHandlerRender(testPrint);
 	searchView.addHandlerSearch(controlSearchResults);
+	paginationView.addHandlerClick(controllPagination, model.state.search);
 
 	//* Show All Products
 	controlProducts();

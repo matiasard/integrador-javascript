@@ -1,6 +1,6 @@
 // import { productsData } from "./db.js";
 // console.log(productsData);
-import { API_URL, API_URL_2 } from "./config.js";
+import { API_URL, API_URL_2, RES_PER_PAGE } from "./config.js";
 import { getJSON } from "./helper.js";
 
 console.log("1️⃣Model Funcionando...");
@@ -10,6 +10,8 @@ export const state = {
 	products: {},
 	search: {
 		query: "",
+		page: 1,
+		resultPerPage: RES_PER_PAGE,
 		results: [],
 	},
 };
@@ -72,4 +74,12 @@ export const loadSearchResults = async function (query) {
 		throw error;
 	}
 };
-// loadSearchResults("placa");
+
+export const getSearchResultsPage = function (page = state.search.page) {
+	state.search.page = page;
+
+	const start = (page - 1) * state.search.resultPerPage;
+	const end = page * state.search.resultPerPage;
+
+	return state.search.results.slice(start, end);
+};
