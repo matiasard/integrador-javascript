@@ -98,13 +98,6 @@ class PaginationView extends View {
 		let btnsPage = Array.from(document.getElementsByClassName("page-link"));
 		if (btnsPage.length == 0 || !btnsPage) return;
 
-		//* Remove active class
-		btnsPage.forEach((element) => {
-			if (element.className.includes("active")) {
-				element.toggle("active");
-			}
-		});
-
 		//* Add active class
 		btnsPage[currentPageNumber].classList.add("active");
 		// console.log(btnsPage[currentPageNumber]);
