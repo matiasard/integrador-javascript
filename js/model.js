@@ -69,6 +69,8 @@ export const loadSearchResults = async function (query) {
 				price: product.price,
 			};
 		});
+
+		state.search.page = 1;
 	} catch (error) {
 		//* Propagamos el error para que el "controller.js" decida que accion realizar con el error
 		throw error;
